@@ -11,11 +11,11 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="file://E:/Program Files/glassfish4/glassfish/lib" />
+          <root url="file://C:/glassfish4/glassfish/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://E:/Program Files/glassfish4/glassfish/lib" recursive="false" />
+        <jarDirectory url="file://C:/glassfish4/glassfish/lib" recursive="false" />
       </library>
     </orderEntry>
   </component>

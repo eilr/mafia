@@ -11,6 +11,7 @@ import java.util.Properties;
 
 /**
  * Created by Yeonil on 4/1/14.
+ * Edited by Richard on 4/1/14.
  */
 public class MafiaCommunicator2 implements MessageListener {
     public static final String TOPIC01 = "jms/Topic02";
@@ -53,13 +54,16 @@ public class MafiaCommunicator2 implements MessageListener {
         ObjectMessage objectMessage = null;
         while(true) {
             message = reader.readLine();
+            CommunicationMessage communicationMessage = new CommunicationMessage(username, message);
             if (message.equalsIgnoreCase("exit")) {
                 topicConnection.close();
                 System.exit(0);
             } else {
                 objectMessage = publishSession.createObjectMessage();
-                objectMessage.setObject(new CommunicationMessage(username, message));
+                objectMessage.setObject(communicationMessage);
                 topicPublisher.publish(objectMessage);
+                System.out.print(communicationMessage.getName());
+                System.out.println(": " + communicationMessage.getMessage());
             }
         }
     }
